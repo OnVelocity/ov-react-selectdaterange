@@ -1,0 +1,31 @@
+.DateRangePicker {
+	max-width: 350px;
+}
+
+.DateRangePicker .week {
+	display: flex;
+}
+
+.DateRangePicker .day {
+	flex: 0 0 auto;
+	min-width: 50px;
+	background-color: aliceblue;
+	color: #000;
+	margin: 0;
+	border: 1px solid transparent;
+	cursor: pointer;
+}
+
+.DateRangePicker .--out-of-start-month {
+	background-color: #f5f5f5;
+	color: #aaaaaa;
+}
+
+.DateRangePicker .--is-today {
+	background-color: #cad8d6;
+	color: #940d16;
+}
+
+.DateRangePicker .--is-selected-date {
+	border: 1px solid darkred;
+}
