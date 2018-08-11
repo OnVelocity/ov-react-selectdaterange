@@ -3,7 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import ReactDomTestUtils from 'react-dom/test-utils'
 import renderer from 'react-test-renderer'
-import {SelectDateRange} from "./SelectDateRange";
+import { SelectDateRange } from './SelectDateRange'
 
 describe('SelectDateRange', () => {
 	let props
@@ -30,10 +30,7 @@ describe('SelectDateRange', () => {
 		const spy = jest.spyOn(console, 'log')
 		const div = document.createElement('div')
 		ReactDOM.render(
-			<SelectDateRange
-				date={props.date}
-				selectedDate={props.selectedDate}
-			/>,
+			<SelectDateRange date={props.date} selectedDate={props.selectedDate} />,
 			div
 		)
 		const day = div.querySelectorAll('.day')[10]
@@ -44,7 +41,7 @@ describe('SelectDateRange', () => {
 	it('calls onDateSelected callback', () => {
 		expect.assertions(1)
 		const div = document.createElement('div')
-		ReactDOM.render(<SelectDateRange {...props}/>, div)
+		ReactDOM.render(<SelectDateRange {...props} />, div)
 		const day = div.querySelectorAll('.day')[10]
 		ReactDomTestUtils.Simulate.click(day, {})
 		expect(props.onDateSelected).toHaveBeenCalledWith(new Date(2017, 9, 4))
@@ -52,7 +49,7 @@ describe('SelectDateRange', () => {
 	it('calls previousYear()', () => {
 		expect.assertions(1)
 		const div = document.createElement('div')
-		ReactDOM.render(<SelectDateRange {...props}/>, div)
+		ReactDOM.render(<SelectDateRange {...props} />, div)
 		const button = div.querySelectorAll('button')[0]
 		ReactDomTestUtils.Simulate.click(button, {})
 		expect(div.innerHTML).toMatchSnapshot()
@@ -60,7 +57,7 @@ describe('SelectDateRange', () => {
 	it('calls nextYear()', () => {
 		expect.assertions(1)
 		const div = document.createElement('div')
-		ReactDOM.render(<SelectDateRange {...props}/>, div)
+		ReactDOM.render(<SelectDateRange {...props} />, div)
 		const button = div.querySelectorAll('button')[1]
 		ReactDomTestUtils.Simulate.click(button, {})
 		expect(div.innerHTML).toMatchSnapshot()
@@ -68,7 +65,7 @@ describe('SelectDateRange', () => {
 	it('calls previousMonth()', () => {
 		expect.assertions(1)
 		const div = document.createElement('div')
-		ReactDOM.render(<SelectDateRange {...props}/>, div)
+		ReactDOM.render(<SelectDateRange {...props} />, div)
 		const button = div.querySelectorAll('button')[2]
 		ReactDomTestUtils.Simulate.click(button, {})
 		expect(div.innerHTML).toMatchSnapshot()
@@ -76,7 +73,7 @@ describe('SelectDateRange', () => {
 	it('calls nextMonth()', () => {
 		expect.assertions(1)
 		const div = document.createElement('div')
-		ReactDOM.render(<SelectDateRange {...props}/>, div)
+		ReactDOM.render(<SelectDateRange {...props} />, div)
 		const button = div.querySelectorAll('button')[3]
 		ReactDomTestUtils.Simulate.click(button, {})
 		expect(div.innerHTML).toMatchSnapshot()

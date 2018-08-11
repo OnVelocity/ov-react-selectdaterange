@@ -1,7 +1,7 @@
 /*global describe, it, expect, beforeEach */
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 import renderer from 'react-test-renderer'
-import {MonthName} from "./SelectDateRange";
+import { MonthName } from './SelectDateRange'
 
 describe('SelectDateRange/MonthName', () => {
 	let monthDates
@@ -26,7 +26,9 @@ describe('SelectDateRange/MonthName', () => {
 		expect.assertions(1)
 		const monthNames = (
 			<Fragment>
-				{monthDates.map(date => <MonthName key={date} date={date} />)}
+				{monthDates.map(date => (
+					<MonthName key={date} date={date} />
+				))}
 			</Fragment>
 		)
 		const tree = renderer.create(monthNames).toJSON()

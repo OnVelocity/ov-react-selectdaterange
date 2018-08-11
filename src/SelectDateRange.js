@@ -1,17 +1,18 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import {
-	getOffsetDate, getOffsetMonth, getOffsetYear,
+	getOffsetDate,
+	getOffsetMonth,
+	getOffsetYear,
 	getStartOfMonthDate,
 	getStartOfWeekDate,
 	isDateInStartDateMonth,
 	isDateSelectedDate,
 	isDateToday
-} from "./date"
+} from './date'
 import './SelectDateRange.css'
 
 export class SelectDateRange extends Component {
-
 	static propTypes = {
 		date: PropTypes.instanceOf(Date)
 	}
@@ -39,7 +40,7 @@ export class SelectDateRange extends Component {
 				</div>
 				<div>
 					<button onClick={() => this.previousMonth()}>Previous Month</button>
-					<MonthName date={this.state.date}/>
+					<MonthName date={this.state.date} />
 					<button onClick={() => this.nextMonth()}>Next Month</button>
 				</div>
 				<div className="week">
@@ -55,7 +56,7 @@ export class SelectDateRange extends Component {
 					<CalendarMonth
 						startDate={this.state.date}
 						selectedDate={this.state.selectedDate}
-						onDateSelected={(date) => this.selectDate(date)}
+						onDateSelected={date => this.selectDate(date)}
 					/>
 				</div>
 			</div>
@@ -64,31 +65,31 @@ export class SelectDateRange extends Component {
 
 	previousYear() {
 		const date = getOffsetYear(this.state.date, -1)
-		this.setState({date})
+		this.setState({ date })
 	}
 
 	nextYear() {
 		const date = getOffsetYear(this.state.date, 1)
-		this.setState({date})
+		this.setState({ date })
 	}
 
 	previousMonth() {
 		const date = getOffsetMonth(this.state.date, -1)
-		this.setState({date})
+		this.setState({ date })
 	}
 
 	nextMonth() {
 		const date = getOffsetMonth(this.state.date, 1)
-		this.setState({date})
+		this.setState({ date })
 	}
 
 	selectDate(date) {
-		this.setState({selectedDate: date})
+		this.setState({ selectedDate: date })
 		this.props.onDateSelected(date)
 	}
 }
 
-export function CalendarMonth({startDate, selectedDate, onDateSelected}) {
+export function CalendarMonth({ startDate, selectedDate, onDateSelected }) {
 	const monthStart = getStartOfMonthDate(startDate)
 	const weekStart = getStartOfWeekDate(monthStart)
 	const weeks = []
@@ -108,7 +109,12 @@ export function CalendarMonth({startDate, selectedDate, onDateSelected}) {
 	return weeks
 }
 
-export function CalendarWeek({startOfWeekDate, startDate, selectedDate, onDateSelected}) {
+export function CalendarWeek({
+	startOfWeekDate,
+	startDate,
+	selectedDate,
+	onDateSelected
+}) {
 	const week = []
 	for (let i = 0; i < 7; i++) {
 		const date = getOffsetDate(startOfWeekDate, i)
@@ -129,8 +135,7 @@ export function CalendarWeek({startOfWeekDate, startDate, selectedDate, onDateSe
 	)
 }
 
-export function CalendarDay({date, startDate, selectedDate = null, onDateSelected}) {
-
+export function CalendarDay({ date, startDate, selectedDate = null, onDateSelected }) {
 	const day = date.getDate()
 	const isToday = isDateToday(date)
 	const inMonth = isDateInStartDateMonth(date, startDate)
@@ -163,7 +168,7 @@ export function CalendarDay({date, startDate, selectedDate = null, onDateSelecte
 	)
 }
 
-export function MonthName({date}) {
+export function MonthName({ date }) {
 	const month = date && date.getMonth()
 	switch (month) {
 		case 0:
