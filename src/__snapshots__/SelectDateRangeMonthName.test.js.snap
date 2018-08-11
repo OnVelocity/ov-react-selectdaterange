@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectDateRange/MonthName renders month names for dates 1`] = `
+Array [
+  <span>
+    January
+</span>,
+  <span>
+    February
+</span>,
+  <span>
+    March
+</span>,
+  <span>
+    April
+</span>,
+  <span>
+    May
+</span>,
+  <span>
+    June
+</span>,
+  <span>
+    July
+</span>,
+  <span>
+    August
+</span>,
+  <span>
+    September
+</span>,
+  <span>
+    October
+</span>,
+  <span>
+    November
+</span>,
+  <span>
+    December
+</span>,
+  <span>
+     
+</span>,
+]
+`;

@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectDateRange/CalendarDay day is after the start of month 1`] = `
+<div
+  className="day --is-not-in-start-month"
+  onClick={[Function]}
+>
+  15
+</div>
+`;
+
+exports[`SelectDateRange/CalendarDay day is before the start of month 1`] = `
+<div
+  className="day --is-not-in-start-month"
+  onClick={[Function]}
+>
+  15
+</div>
+`;
+
+exports[`SelectDateRange/CalendarDay day is today 1`] = `
+<div
+  className="day --is-today"
+  onClick={[Function]}
+>
+  11
+</div>
+`;
+
+exports[`SelectDateRange/CalendarDay selected date given 1`] = `
+<div
+  className="day --is-selected-date"
+  onClick={[Function]}
+>
+  15
+</div>
+`;
+
+exports[`SelectDateRange/CalendarDay selected date not given 1`] = `
+<div
+  className="day"
+  onClick={[Function]}
+>
+  15
+</div>
+`;

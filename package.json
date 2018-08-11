@@ -16,7 +16,8 @@
     "prettier": "prettier --write {src,public}/**/*.{js,css}"
   },
   "devDependencies": {
-    "prettier": "^1.14.2"
+    "prettier": "^1.14.2",
+    "react-test-renderer": "^16.4.2"
   },
   "prettier": {
     "semi": false,

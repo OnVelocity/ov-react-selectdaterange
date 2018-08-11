@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectDateRange/CalendarWeek renders 1`] = `
+<div
+  className="week"
+>
+  <div
+    className="day"
+    onClick={[Function]}
+  >
+    10
+  </div>
+  <div
+    className="day"
+    onClick={[Function]}
+  >
+    11
+  </div>
+  <div
+    className="day"
+    onClick={[Function]}
+  >
+    12
+  </div>
+  <div
+    className="day"
+    onClick={[Function]}
+  >
+    13
+  </div>
+  <div
+    className="day"
+    onClick={[Function]}
+  >
+    14
+  </div>
+  <div
+    className="day"
+    onClick={[Function]}
+  >
+    15
+  </div>
+  <div
+    className="day"
+    onClick={[Function]}
+  >
+    16
+  </div>
+</div>
+`;
